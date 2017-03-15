@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>framework</groupId>
+	<artifactId>framework-db-dao-impl</artifactId>
+	<version>0.4.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Database Layer - DAO Implementation</name>
+	<url>http://www.tonyb.technology</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<profiles>
+		<!-- Profile for development purposes -->
+		<profile>
+			<id>devel</id>
+
+			<activation>
+            	<activeByDefault>true</activeByDefault>
+        	</activation>
+
+			<build>
+				<!-- This part of Maven configuration provides loading of values from buildconfiguration.development.properties and replacing them in other configuration files of the framework -->
+				<testResources>
+            		<testResource>
+						<directory>src/test/resources</directory>
+						<filtering>true</filtering>
+					</testResource>
+				</testResources>
+				<filters>
+					<filter>../../framework/configuration/buildconfig.devel.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		
+		<!-- Profile for production purposes -->
+		<profile>
+			<id>prod</id>
+			
+			<build>
+				<!-- This part of Maven configuration provides loading of values from buildconfiguration.production.properties and replacing them in other configuration files of the framework -->
+				<testResources>
+            		<testResource>
+						<directory>src/test/resources</directory>
+						<filtering>true</filtering>
+					</testResource>
+				</testResources>
+				<filters>
+					<filter>../../framework/configuration/buildconfig.prod.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>framework</groupId>
+			<artifactId>framework-db-dao</artifactId>
+			<version>0.4.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>framework</groupId>
+			<artifactId>framework-db-dbo</artifactId>
+			<version>0.4.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>framework</groupId>
+			<artifactId>framework-utils</artifactId>
+			<version>0.4.0-SNAPSHOT</version>
+		</dependency>
+
+		<!-- For logging purposes is used LogBack. -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+
+		<!-- During the programming is necessary to use some helper classes. Apache Commons Lang3 is good library for that purposes. -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+
+		<!-- As an implementation framework of JPA is used Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.2.1.Final</version>
+		</dependency>
+
+		<!-- As a database is used PostgreSQL 9.3 -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.3-1104-jdbc41</version>
+		</dependency>
+		
+		<!-- Framework for JUnit tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>

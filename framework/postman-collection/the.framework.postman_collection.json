@@ -1,0 +1,526 @@
+{
+	"variables": [],
+	"info": {
+		"name": "The Framework",
+		"_postman_id": "efb7071e-0e0b-6ccc-2870-94da1dc92160",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Country",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Country by alpha2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+									"",
+									"tests[\"Status code name has string\"] = responseCode.name.has(\"OK\");",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/framework/api/data/country/v1/byAlpha2/CZ",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get Country by alpha2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country by alpha3",
+					"request": {
+						"url": "localhost:8080/framework/api/data/country/v1/byAlpha3/SVK",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get Country by alpha3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country by country code",
+					"request": {
+						"url": "localhost:8080/framework/api/data/country/v1/byCountryCode/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get Country by country code"
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of Countries",
+					"request": {
+						"url": "localhost:8080/framework/api/data/country/v1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get list of Countries"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Language",
+			"description": "",
+			"item": [
+				{
+					"name": "Get users language",
+					"request": {
+						"url": "localhost:8080/framework/api/data/language/v1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get users language"
+					},
+					"response": []
+				},
+				{
+					"name": "Set users language",
+					"request": {
+						"url": "localhost:8080/framework/api/data/language/v1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usersLanguage\": \"en\"\n}"
+						},
+						"description": "Set users language"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user by id",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get user by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by user name",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/user-name/test1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get User by user name"
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of users",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get list of users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get limited list of users ",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/?limit=1&offset=0",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Get limited list of users"
+					},
+					"response": []
+				},
+				{
+					"name": "Register new user by admin",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/register/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test50\",\n  \"password\": \"heslo\",\n  \"email\" : \"email\"\n}"
+						},
+						"description": "Register new user by admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate user by admin",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/activate/test50",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Activate user by admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Inactivate user by admin",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/inactivate/test50",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Inactivate user by admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Ban user by admin",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/ban/test50",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Ban user by admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by admin",
+					"request": {
+						"url": "localhost:8080/framework/api/action/user/v1/delete/test50",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete user by admin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User registration",
+			"description": "Contains calls to the API used for registration, activation or verification of user and user data",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"url": "localhost:8080/framework/api/action/register-user/v1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test2\",\n  \"password\": \"heslo\",\n  \"email\" : \"a.balucha@gmail.com\"\n}"
+						},
+						"description": "Register user"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate account",
+					"request": {
+						"url": "localhost:8080/framework/api/action/activate-account/v1/activation-token/a6464c8a340e40d5925815e4108acee91485126857722",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test1\",\n  \"password\": \"heslo\",\n  \"email\" : \"a.balucha@gmail.com\"\n}"
+						},
+						"description": "Activate account"
+					},
+					"response": []
+				},
+				{
+					"name": "Log in",
+					"request": {
+						"url": "localhost:8080/framework/api/action/login/v1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test1\",\n  \"password\": \"heslo\",\n  \"rememberMe\" : true\n}"
+						},
+						"description": "Log in to the application"
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"url": "localhost:8080/framework/api/action/logout/v1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"test12345\",\n  \"password\": \"heslo\",\n  \"rememberMe\" : true\n}"
+						},
+						"description": "Log out from the application"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

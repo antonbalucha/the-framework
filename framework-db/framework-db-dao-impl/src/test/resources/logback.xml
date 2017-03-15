@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="300 seconds" packagingData="true">
+
+	<!-- Logging all to the console and file -->
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>[%-5level][%d{HH:mm:ss.SSS}][%file:%method:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_ROOT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${test.logger.framework.root.path}${test.logger.framework.root.filename}.${test.logger.framework.root.extension}</file>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			
+			<!-- Daily rollover file name setup. Path must match the one in the file element or else the rollover logs are placed in the working directory. -->
+			<fileNamePattern>${test.logger.framework.root.path}${test.logger.framework.root.filename}_%d{yyyy-MM-dd}.%i.${test.logger.framework.root.extension}</fileNamePattern>
+
+			<!-- Maximum size of file -->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${test.logger.framework.root.maxfilesize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+
+			<!-- Number of days which will be logs kept -->
+			<maxHistory>${test.logger.framework.root.maxhistory}</maxHistory>
+
+		</rollingPolicy>
+
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>[%-5level][%d{YYYY.MM.dd HH:mm:ss.SSS}][%logger:%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="${test.logger.framework.root.level}">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE_ROOT" />
+	</root>
+
+	<!-- Logging only Framework packages to the specific file -->
+
+	<appender name="FILE_FRAMEWORK" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${test.logger.framework.framework.path}${test.logger.framework.framework.filename}.${test.logger.framework.framework.extension}</file>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			
+			<!-- Daily rollover file name setup. Path must match the one in the file element or else the rollover logs are placed in the working directory. -->
+			<fileNamePattern>${test.logger.framework.framework.path}${test.logger.framework.framework.filename}_%d{yyyy-MM-dd}.%i.${test.logger.framework.framework.extension}</fileNamePattern>
+
+			<!-- Maximum size of file -->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${test.logger.framework.framework.maxfilesize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+
+			<!-- Number of days which will be logs kept -->
+			<maxHistory>${test.logger.framework.framework.maxhistory}</maxHistory>
+
+		</rollingPolicy>
+
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>[%-5level][%d{YYYY.MM.dd HH:mm:ss.SSS}][%logger:%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="framework" level="${test.logger.framework.framework.level}">
+		<appender-ref ref="FILE_FRAMEWORK" />
+	</logger>
+
+</configuration>

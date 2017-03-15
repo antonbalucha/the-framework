@@ -1,0 +1,81 @@
+# configuration for development purposes
+
+# configuration of persistence.xml
+
+default.persistence.unit.name = 
+hibernate.connection.driver_class = 
+hibernate.dialect = 
+hibernate.connection.url = 
+hibernate.connection.username = 
+hibernate.connection.password = 
+hibernate.globally_quoted_identifiers = 
+
+# configuration of configuration.properties
+
+email.smtp.host = smtp.websupport.sk
+email.smtp.socketFactory.port = 465
+email.smtp.auth = true
+email.smtp.port = 465
+
+email.username = devel@tonyb.technology
+email.password = 3VcqqW6lFS
+email.user.registration.from = devel@tonyb.technology
+
+protocol.server.port.path = http://localhost:8080/framework
+
+# configuration of logback.xml
+logger.framework.root.path = C:\\devel\\!logs\\
+logger.framework.root.filename = framework_root
+logger.framework.root.extension = log
+logger.framework.root.maxfilesize = 100kb
+logger.framework.root.maxhistory = 30
+logger.framework.root.level = DEBUG
+
+logger.framework.framework.path = C:\\devel\\!logs\\
+logger.framework.framework.filename = framework_framework
+logger.framework.framework.extension = log
+logger.framework.framework.maxfilesize = 100kb
+logger.framework.framework.maxhistory = 30
+logger.framework.framework.level = DEBUG
+
+
+
+# configuration used for testing of development environment
+
+# configuration of persistence.xml
+
+test.default.persistence.unit.name = frameworkConnectorForTesting
+test.hibernate.connection.driver_class = org.postgresql.Driver
+test.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+test.hibernate.connection.url = jdbc:postgresql://localhost:5432/framework_test
+test.hibernate.connection.username = Anton
+test.hibernate.connection.password = Initial0
+test.hibernate.globally_quoted_identifiers = true
+
+# configuration of configuration.properties
+
+test.email.smtp.host = smtp.websupport.sk
+test.email.smtp.socketFactory.port = 465
+test.email.smtp.auth = true
+test.email.smtp.port = 465
+
+test.email.username = devel@tonyb.technology
+test.email.password = 3VcqqW6lFS
+test.email.user.registration.from = devel@tonyb.technology
+
+test.protocol.server.port.path = http://localhost:8080/framework
+
+# configuration of logback.xml
+test.logger.framework.root.path = C:\\devel\\!logs\\
+test.logger.framework.root.filename = framework_root_test
+test.logger.framework.root.extension = log
+test.logger.framework.root.maxfilesize = 100kb
+test.logger.framework.root.maxhistory = 30
+test.logger.framework.root.level = DEBUG
+
+test.logger.framework.framework.path = C:\\devel\\!logs\\
+test.logger.framework.framework.filename = framework_framework_test
+test.logger.framework.framework.extension = log
+test.logger.framework.framework.maxfilesize = 100kb
+test.logger.framework.framework.maxhistory = 30
+test.logger.framework.framework.level = DEBUG
