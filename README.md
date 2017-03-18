@@ -5,7 +5,7 @@ Structure and set of Java libraries which help me to build simple web applicatio
 ## General idea about The Framework
 
 For understanding of the idea of The Framework and why to use it, we have to go to the history. 
-On my early beginning as a programmer I learned many stuff and (as many) I thought that with the knowledge I gained I can build some awesome framework that I will use on many projects and maybe many other will use it. Then I started to go to regular work and I saw that other developers are trying to build their frameworks which will be used on the project later. After some time, I realized that many times they were focused on framework itself instead of the project. Learning of a framework which many times have no documentation/was not open source/only a few people knew what certain library was doing was also not pleasant :confused: Sometimes deadlines were postponed because of problems with framework. It was not right. After all, the idea of a framework is to help to the developer to build projects quickly and easily. 
+On my early beginning as a programmer I learned many stuff and (as many) I thought that with the knowledge I gained I can build some awesome framework that I will use on many projects and maybe many other will use it. Then I started to go to regular work and I saw that other developers are trying to build their frameworks which will be used on the project later. After some time, I realized that many times they were focused on framework itself instead of the project. Learning of a framework which many times have no documentation/was not open source/only a few people knew what certain library was doing was also not pleasant. Sometimes deadlines were postponed because of problems with framework. It was not right. After all, the idea of a framework is to help to the developer to build projects quickly and easily. 
 
 Besides of a frameworks used on a projects I also learned some third party libraries. I started to use it more also on my projects. I realized that the wheel I am trying to invent in the form of my custom awesome framework was useless, because on the Internet we have many libraries/projects with large community and support. Subsequently, I deleted every my code which can be found in some third party open source library; created some directory and project structure and basic structure of The Framework was built. Later I made some haircut of The Framework and pushed it here on the GitHub. 
 
@@ -41,22 +41,28 @@ Run ```git clone git@github.com:antonbalucha/the-framework.git``` command from y
 Before building The Framework by Apache Maven you have to configure some properties. Template for configuration file is located:
 * for development purposes in [buildconfig.devel.properties.template](https://github.com/antonbalucha/the-framework/blob/master/framework/configuration/buildconfig.devel.properties.template) - you have to update it and rename it to ```buildconfig.devel.properties```
 * for production purposes in [buildconfig.prod.properties.template](https://github.com/antonbalucha/the-framework/blob/master/framework/configuration/buildconfig.prod.properties.template) - you have to update it and rename it to ```buildconfig.prod.properties```
-When you subsequently run build command, configuration properties will be copied to configuration files like ```shiro.ini```,``` persistence.xml```, ```configuration.properties``` and ```logback.xml```.
+
+When you subsequently run build commands mentioned below, configuration properties will be correctly copied to configuration files like ```[shiro.ini](https://github.com/antonbalucha/the-framework/blob/master/framework-web/framework-web-ui/src/main/webapp/WEB-INF/shiro.ini)```,``` persistence.xml```, ```configuration.properties``` and ```logback.xml```.
 
 ## How to build The Framework?
 
-* For development purposes: *
+For development purposes:
 * if you wish to build it without running of tests:
    * ```mvn clean -Pdevel resources:resources install -Dmaven.test.skip=true``` 
    * or (since devel profile is the default one):  ```mvn clean resources:resources install -Dmaven.test.skip=true```
 * if you wish to build and run tests after build:
    * ```mvn clean -Pdevel resources:resources resources:testResources install -Dmaven.test.skip=false```
    * or (since devel profile is the default one): ```mvn clean resources:resources resources:testResources install -Dmaven.test.skip=false```
-* For production purposes: *
+
+For production purposes:
 * if you wish to build it without running of tests:
    * ```mvn clean -Pprod resources:resources install -Dmaven.test.skip=true```
 * if you wish to build and run tests after build:
    * ```mvn clean -Pprod resources:resources resources:testResources install -Dmaven.test.skip=false```
+
+## License
+
+I provide this project under [Apache License 2.0](https://github.com/antonbalucha/the-framework/blob/master/LICENSE).
    
 ## Contact
 
