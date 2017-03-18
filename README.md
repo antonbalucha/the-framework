@@ -11,7 +11,7 @@ Besides of a frameworks used on a projects I also learned some third party libra
 
 So, what is The Framework now? Simple said, it is a project/directory structure linked together with third party libraries with some basic functionality - authorization, authentication, changing of language, support for translations and connection to the database. When you want to make some Java web application with mentioned functionalities, you may download The Framework and start with programming. Do not have to speculate how directory structure should looks like, which libraries you should use, how to build it. Everything is done and ready to use.
 
-## Which technologies/libraries are used in The Framework?
+## Technologies and libraries used in The Framework
 
 * frontend
     * [HTML5](https://www.w3schools.com/html/)
