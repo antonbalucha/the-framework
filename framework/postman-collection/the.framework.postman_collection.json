@@ -439,7 +439,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"userName\": \"test2\",\n  \"password\": \"heslo\",\n  \"email\" : \"a.balucha@gmail.com\"\n}"
+							"raw": "{\n  \"userName\": \"test2\",\n  \"password\": \"heslo\",\n  \"email\" : \"username@domain.com\"\n}"
 						},
 						"description": "Register user"
 					},
@@ -464,7 +464,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"userName\": \"test1\",\n  \"password\": \"heslo\",\n  \"email\" : \"a.balucha@gmail.com\"\n}"
+							"raw": "{\n  \"userName\": \"test1\",\n  \"password\": \"heslo\",\n  \"email\" : \"username@domain.com\"\n}"
 						},
 						"description": "Activate account"
 					},

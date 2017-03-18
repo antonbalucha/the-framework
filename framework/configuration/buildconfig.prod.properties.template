@@ -1,0 +1,233 @@
+#######################################
+# configuration for production purposes
+
+############################
+# configuration of shiro.ini
+
+# sample value: org.postgresql.ds.PGPoolingDataSource
+shiro.database.datasource = 
+
+# sample value: 127.0.0.1
+shiro.database.serverName = 
+
+# sample value: 5432
+shiro.database.portNumber = 
+
+# sample value: UserName
+shiro.database.user = 
+
+# sample value: Password
+shiro.database.password = 
+
+# name of database in which are credential stored. when you made no changes, it should be same as database name defined below in hibernate.connection.url
+# sample value: framework
+shiro.database.databaseName = 
+
+##################################
+# configuration of persistence.xml
+
+# sample value: frameworkConnector
+default.persistence.unit.name = 
+
+# sample value: org.postgresql.Driver
+hibernate.connection.driver_class = 
+
+# sample value: org.hibernate.dialect.PostgreSQLDialect
+hibernate.dialect = 
+
+# sample value: jdbc:postgresql://localhost:5432/framework
+hibernate.connection.url = 
+
+# sample value: UserName
+hibernate.connection.username = 
+
+# sample value: Password
+hibernate.connection.password = 
+
+# sample value: true
+hibernate.globally_quoted_identifiers = 
+
+###########################################
+# configuration of configuration.properties
+
+# email server connection setting
+# sample value: smtp.somedomain.com
+email.smtp.host = 
+
+# email server connection setting
+# sample value: 465
+email.smtp.socketFactory.port = 
+
+# email server connection setting
+# sample value: true
+email.smtp.auth = 
+
+# email server connection setting
+# sample value: 465
+email.smtp.port = 
+
+# email server credential setting
+# sample value: user@domain.com
+email.username = 
+
+# email server credential setting
+# sample value: Password
+email.password = 
+
+# email displayed as sender when registration email will be sent to new user
+# sample value: registration@domain.com
+email.user.registration.from = 
+
+# protocol, server, port and path on which the framework runs
+# sample value: http://localhost:8080/framework
+protocol.server.port.path = 
+
+##############################
+# configuration of logback.xml
+
+# sample value: C:\\devel\\!logs\\
+logger.framework.root.path = 
+
+# sample value: framework_root
+logger.framework.root.filename = 
+
+# sample value: log
+logger.framework.root.fileextension = 
+
+# maximal size of the log file
+# sample value: 100kb
+logger.framework.root.maxfilesize = 
+
+# maximum number of days for which will be kept log history
+# sample value: 30
+logger.framework.root.maxhistory = 
+
+# sample value: DEBUG
+logger.framework.root.level = 
+
+# sample value: C:\\devel\\!logs\\
+logger.framework.framework.path = 
+
+# sample value: framework_framework
+logger.framework.framework.filename = 
+
+# sample value: log
+logger.framework.framework.fileextension = 
+
+# maximal size of the log file
+# sample value: 100kb
+logger.framework.framework.maxfilesize = 
+
+# maximum number of days for which will be kept log history
+# sample value: 30
+logger.framework.framework.maxhistory = 
+
+# sample value: DEBUG
+logger.framework.framework.level = 
+
+
+
+##########################################################
+# configuration used for testing of production environment
+
+##################################
+# configuration of persistence.xml
+
+# sample value: frameworkConnector
+test.default.persistence.unit.name = 
+
+# sample value: org.postgresql.Driver
+test.hibernate.connection.driver_class = 
+
+# sample value: org.hibernate.dialect.PostgreSQLDialect
+test.hibernate.dialect = 
+
+# sample value: jdbc:postgresql://localhost:5432/framework
+test.hibernate.connection.url = 
+
+# sample value: UserName
+test.hibernate.connection.username = 
+
+# sample value: Password
+test.hibernate.connection.password = 
+
+# sample value: true
+test.hibernate.globally_quoted_identifiers = 
+
+###########################################
+# configuration of configuration.properties
+
+# email server connection setting
+# sample value: smtp.somedomain.com
+test.email.smtp.host = 
+
+# email server connection setting
+# sample value: 465
+test.email.smtp.socketFactory.port = 
+
+# email server connection setting
+# sample value: true
+test.email.smtp.auth = 
+
+# email server connection setting
+# sample value: 465
+test.email.smtp.port = 
+
+# email server credential setting
+# sample value: user@domain.com
+test.email.username = 
+
+# email server credential setting
+# sample value: Password
+test.email.password = 
+
+# email displayed as sender when registration email will be sent to new user
+# sample value: registration@domain.com
+test.email.user.registration.from = 
+
+# protocol, server, port and path on which the framework runs
+# sample value: http://localhost:8080/framework
+test.protocol.server.port.path = 
+
+##############################
+# configuration of logback.xml
+
+# sample value: C:\\devel\\!logs\\
+test.logger.framework.root.path = 
+
+# sample value: framework_root
+test.logger.framework.root.filename = 
+
+# sample value: log
+test.logger.framework.root.fileextension = 
+
+# maximal size of the log file
+# sample value: 100kb
+test.logger.framework.root.maxfilesize = 
+
+# maximum number of days for which will be kept log history
+# sample value: 30
+test.logger.framework.root.maxhistory = 
+
+# sample value: DEBUG
+test.logger.framework.root.level = 
+
+# sample value: C:\\devel\\!logs\\
+test.logger.framework.framework.path = 
+
+# sample value: framework_framework
+test.logger.framework.framework.filename = 
+
+# sample value: log
+test.logger.framework.framework.fileextension = 
+
+# maximal size of the log file
+# sample value: 100kb
+test.logger.framework.framework.maxfilesize = 
+
+# maximum number of days for which will be kept log history
+# sample value: 30
+test.logger.framework.framework.maxhistory = 
+
+# sample value: DEBUG
+test.logger.framework.framework.level = 
