@@ -45,8 +45,5 @@ public class PasswordUtilsTest {
 		
 		Assert.assertEquals("Salts should be equal", salt1, salt2);
 		Assert.assertEquals("Hashed passwords should be equal", hashedPassword1, hashedPassword2);
-		
-		
-		
 	}
 }

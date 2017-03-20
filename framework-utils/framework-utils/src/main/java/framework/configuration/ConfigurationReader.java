@@ -12,9 +12,6 @@ public class ConfigurationReader {
 	
 	private static final String DATABASE_PERSISTENCE_UNIT_NAME = "database.persistence_unit_name";
 	
-	private static final String HASH_NUMBER_OF_ITERATIONS = "hash.number_of_iterations";
-	private static final String HASH_NUMBER_OF_SEEDS = "hash.number_of_seeds"; 
-	
 	private static final String EMAIL_SMTP_HOST = "email.smtp.host";
 	private static final String EMAIL_SMTP_SOCKET_FACTORY_PORT = "email.smtp.socketFactory.port";
 	private static final String EMAIL_SMTP_SOCKET_FACTORY_CLASS = "email.smtp.socketFactory.class";
@@ -39,14 +36,6 @@ public class ConfigurationReader {
 	
 	public static String getDatabasePersistenceUnitName() {
 		return ConfigurationInitializer.loadAsString(DATABASE_PERSISTENCE_UNIT_NAME);
-	}
-	
-	public static Integer getHashNumberOfIterations() {
-		return ConfigurationInitializer.loadAsInteger(HASH_NUMBER_OF_ITERATIONS);
-	}
-	
-	public static Integer getHashNumberOfSeeds() {
-		return ConfigurationInitializer.loadAsInteger(HASH_NUMBER_OF_SEEDS);
 	}
 	
 	public static String getEmailSmtpHost() {
