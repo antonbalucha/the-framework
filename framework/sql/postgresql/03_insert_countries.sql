@@ -1,3 +1,5 @@
+USE "framework";
+
 INSERT INTO "Country" ("CountryNameEN", "CountryNameSK", "CountryNameOriginal", "Alpha2", "Alpha3", "CountryCode", "Region", "RegionCode", "SubRegion", "SubRegionCode") VALUES ('Andorra', 'Andorra', NULL, 'AD', 'AND', '20', 'Europe', '150', 'Southern Europe', '39');
 INSERT INTO "Country" ("CountryNameEN", "CountryNameSK", "CountryNameOriginal", "Alpha2", "Alpha3", "CountryCode", "Region", "RegionCode", "SubRegion", "SubRegionCode") VALUES ('United Arab Emirates', 'Spojené arabské emiráty', NULL, 'AE', 'ARE', '784', 'Asia', '142', 'Western Asia', '145');
 INSERT INTO "Country" ("CountryNameEN", "CountryNameSK", "CountryNameOriginal", "Alpha2", "Alpha3", "CountryCode", "Region", "RegionCode", "SubRegion", "SubRegionCode") VALUES ('Afghanistan', 'Afganistan', NULL, 'AF', 'AFG', '4', 'Asia', '142', 'Southern Asia', '34');

@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS `framework`;
+CREATE DATABASE `framework`
+	DEFAULT CHARACTER SET utf8
+	COLLATE utf8_slovak_ci;

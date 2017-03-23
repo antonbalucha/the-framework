@@ -1,8 +1,9 @@
+USE "framework";
+
 -- SYSTEM INFORMATION
 
 DROP TABLE IF EXISTS "SystemInformation";
-CREATE TABLE "SystemInformation"
-(
+CREATE TABLE "SystemInformation" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE,
   "PropertyName" text NOT NULL,
   "PropertyValue" text NOT NULL,
@@ -15,8 +16,7 @@ WITH (
 -- USER --
 
 DROP TABLE IF EXISTS "User";
-CREATE TABLE "User"
-(
+CREATE TABLE "User" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE,
   "UserName" text NOT NULL UNIQUE,
   "Password" text NOT NULL UNIQUE,
@@ -32,12 +32,12 @@ WITH (
 );
 
 DROP TABLE IF EXISTS "UserHistory";
-CREATE TABLE "UserHistory"
-(
+CREATE TABLE "UserHistory" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE,
   "UserName" text NOT NULL,
   "Email" text NOT NULL,
-  "Status" char(1) NOT NULL, 
+  "Status" char(1) NOT NULL,
+  "Language" char(2) NOT NULL,
   "TimestampOfChange" timestamp with time zone NOT NULL
 )
 WITH (
@@ -47,8 +47,7 @@ WITH (
 -- USER ROLES --
 
 DROP TABLE IF EXISTS "UserRoles";
-CREATE TABLE "UserRoles"
-(
+CREATE TABLE "UserRoles" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE, 
   "UserName" text NOT NULL, 
   "Role" text NOT NULL
@@ -58,8 +57,7 @@ WITH (
 );
 
 DROP TABLE IF EXISTS "UserRolesHistory";
-CREATE TABLE "UserRolesHistory"
-(
+CREATE TABLE "UserRolesHistory" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE, 
   "UserName" text NOT NULL, 
   "Role" text NOT NULL,
@@ -72,8 +70,7 @@ WITH (
 -- ROLE PERMISSIONS --
 
 DROP TABLE IF EXISTS "RolePermissions";
-CREATE TABLE "RolePermissions"
-(
+CREATE TABLE "RolePermissions" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE, 
   "Permission" text NOT NULL, 
   "Role" text NOT NULL
@@ -83,8 +80,7 @@ WITH (
 );
 
 DROP TABLE IF EXISTS "RolePermissionsHistory";
-CREATE TABLE "RolePermissionsHistory"
-(
+CREATE TABLE "RolePermissionsHistory" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE, 
   "Permission" text NOT NULL, 
   "Role" text NOT NULL,
@@ -97,8 +93,7 @@ WITH (
 -- COUNTRY --
 
 DROP TABLE IF EXISTS "Country";
-CREATE TABLE "Country"
-(
+CREATE TABLE "Country" (
   "Id" SERIAL NOT NULL PRIMARY KEY UNIQUE,
   "Alpha2" char(2) NOT NULL,
   "Alpha3" char(3) NOT NULL,
@@ -114,4 +109,3 @@ CREATE TABLE "Country"
 WITH (
   OIDS = FALSE
 );
-
