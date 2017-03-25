@@ -57,7 +57,8 @@ Run ```git clone git@github.com:antonbalucha/the-framework.git``` command from y
 Definitions of database tables are located in:
 * [the-framework/framework/sql/postgresql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/postgresql) 
 * [the-framework/framework/sql/mysql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/mysql). 
-You may choose which database you want to use. You have to run SQL scripts according their ordering. 
+
+You may choose which database you want to use. You have to run SQL scripts according their ordering.
 
 ## Set up of The Framework
 
