@@ -21,7 +21,8 @@ So, what is The Framework now? Simple said, it is a project/directory structure 
 
 * backend
     * web API - [Jersey](https://jersey.java.net/)
-    * database layer - [Hibernate](http://hibernate.org/), [PostgreSQL](https://www.postgresql.org/)
+    * database layer - [Hibernate](http://hibernate.org/)
+    * database - [PostgreSQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/)
     * logging - [Logback](https://logback.qos.ch/)
     * configuration - [Apache Commons Configuration](https://commons.apache.org/proper/commons-configuration/)
     * security - [Apache Shiro](https://shiro.apache.org/)
@@ -35,7 +36,7 @@ So, what is The Framework now? Simple said, it is a project/directory structure 
 * other
     * web API calls - [Postman](https://www.getpostman.com/)
 
-# Procedure how to run The Framework	
+# Procedure how to run The Framework
 
 In following paragraphs you will find step by step procedure how to download, set up and run The Framework. 
 
@@ -43,15 +44,20 @@ In following paragraphs you will find step by step procedure how to download, se
 
 You have to install and set up:
 * [Postman](https://www.getpostman.com/) - for web API calls and testing
-* [PostgreSQL](https://www.postgresql.org/) - as a database, which is currently supported
-	
+* one of supported database:
+    * [PostgreSQL](https://www.postgresql.org/)
+    * [MySQL](https://www.mysql.com/)
+
 ## Getting The Framework
 
 Run ```git clone git@github.com:antonbalucha/the-framework.git``` command from your console, which supports GIT (e.g. https://git-scm.com/downloads)
 
 ## Initialization of database and database tables
 
-Definitions of database tables are located in directory [the-framework/framework/sql/postgresql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/postgresql). You have to run SQL scripts according their numbering. 
+Definitions of database tables are located in:
+* [the-framework/framework/sql/postgresql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/postgresql) 
+* [the-framework/framework/sql/mysql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/mysql). 
+You may choose which database you want to use. You have to run SQL scripts according their ordering. 
 
 ## Set up of The Framework
 
@@ -65,30 +71,30 @@ When you subsequently run build commands mentioned below, configuration properti
 
 For development purposes:
 * if you wish to build it without running of tests:
-   * ```mvn clean -Pdevel resources:resources install -Dmaven.test.skip=true``` 
-   * or (since devel profile is the default one):  ```mvn clean resources:resources install -Dmaven.test.skip=true```
+    * ```mvn clean -Pdevel resources:resources install -Dmaven.test.skip=true```
+    * or (since devel profile is the default one):  ```mvn clean resources:resources install -Dmaven.test.skip=true```
 * if you wish to build and run tests after build:
-   * ```mvn clean -Pdevel resources:resources resources:testResources install -Dmaven.test.skip=false```
-   * or (since devel profile is the default one): ```mvn clean resources:resources resources:testResources install -Dmaven.test.skip=false```
+    * ```mvn clean -Pdevel resources:resources resources:testResources install -Dmaven.test.skip=false```
+    * or (since devel profile is the default one): ```mvn clean resources:resources resources:testResources install -Dmaven.test.skip=false```
 
 For production purposes:
 * if you wish to build it without running of tests:
-   * ```mvn clean -Pprod resources:resources install -Dmaven.test.skip=true```
+    * ```mvn clean -Pprod resources:resources install -Dmaven.test.skip=true```
 * if you wish to build and run tests after build:
-   * ```mvn clean -Pprod resources:resources resources:testResources install -Dmaven.test.skip=false```
+    * ```mvn clean -Pprod resources:resources resources:testResources install -Dmaven.test.skip=false```
 
-When you build The Framework you may deploy it on Apache Tomcat and start it.   
-   
+When you build The Framework you may deploy it on Apache Tomcat and start it.
+
 ## Learn, how to use The Framework
 
 Maybe later I will write or describe more detailly structure of The Framework, but for now, you can learn very easily The Framework by yourself - by debugging. In directory [the-framework/framework/postman-collection](https://github.com/antonbalucha/the-framework/tree/master/framework/postman-collection) is present Postman collection. You import it into your Postman and choose the web API you want to test/learn on it. Then you find annotation of selected API you want to test in Java source code and appropriate methods mark as breakpoint. When you send request via Postman, your IDE should start with debugging and you can see by which classes and methods flow runs. 
 
 # In conclusion
-   
+
 ## License
 
 I provide this project under [Apache License 2.0](https://github.com/antonbalucha/the-framework/blob/master/LICENSE).
-   
+
 ## Contact
 
 In case of any questions about The Framework or suggestions for improvements or some feedback or whatever is in your mind about The Framework you may contact me on ```projects@tonyb.technology```.
