@@ -4,47 +4,72 @@
 ############################
 # configuration of shiro.ini
 
-# sample value: org.postgresql.ds.PGPoolingDataSource
+# sample value: postgresql:	org.postgresql.ds.PGPoolingDataSource
+# sample value: mysql:		com.mysql.cj.jdbc.MysqlDataSource
 shiro.database.datasource = 
 
-# sample value: 127.0.0.1
+# sample value: postgresql:	127.0.0.1
+# sample value: mysql:		127.0.0.1
 shiro.database.serverName = 
 
-# sample value: 5432
+# sample value: postgresql:	5432
+# sample value: mysql:		3306
 shiro.database.portNumber = 
 
-# sample value: UserName
+# sample value: postgresql:	UserName
+# sample value: mysql:		UserName
 shiro.database.user = 
 
-# sample value: Password
+# sample value: postgresql:	Password
+# sample value: mysql:		Password
 shiro.database.password = 
 
 # name of database in which are credential stored. when you made no changes, it should be same as database name defined below in hibernate.connection.url
-# sample value: framework
+# sample value: postgresql:	framework
+# sample value: mysql:		framework
 shiro.database.databaseName = 
+
+# sample value: postgresql:	SELECT "Password", "Salt" FROM "User" WHERE "UserName" = ? AND "Status" = 'A'
+# sample value: mysql:		SELECT Password, Salt FROM User WHERE UserName = ? AND Status = 'A'
+shiro.sql.jdbcRealm.authenticationQuery = 
+
+# sample value: postgresql:	SELECT "Role" FROM "UserRoles" WHERE "UserName" = ?
+# sample value: mysql:		SELECT Role FROM UserRoles WHERE UserName = ?
+shiro.sql.jdbcRealm.userRolesQuery = 
+
+# sample value: postgresql:	SELECT "Permission" FROM "RolePermissions" WHERE "Role" = ?
+# sample value: mysql:		SELECT Permission FROM RolePermissions WHERE Role = ?
+shiro.sql.jdbcRealm.permissionsQuery = 
 
 ##################################
 # configuration of persistence.xml
 
-# sample value: frameworkConnector
+# sample value: postgresql:	frameworkConnector
+# sample value: mysql:		frameworkConnector
 default.persistence.unit.name = 
 
-# sample value: org.postgresql.Driver
+# sample value: postgres:	org.postgresql.Driver
+# sample value: mysql:		com.mysql.jdbc.Driver
 hibernate.connection.driver_class = 
 
-# sample value: org.hibernate.dialect.PostgreSQLDialect
+# sample value: postgres:	org.hibernate.dialect.PostgreSQLDialect
+# sample value: mysql:		org.hibernate.dialect.MySQLDialect
 hibernate.dialect = 
 
-# sample value: jdbc:postgresql://localhost:5432/framework
+# sample value: postgres:	jdbc:postgresql://localhost:5432/framework
+# sample value: mysql:		jdbc:mysql://localhost:3306/framework
 hibernate.connection.url = 
 
-# sample value: UserName
+# sample value: postgres:	UserName
+# sample value: mysql:		UserName
 hibernate.connection.username = 
 
-# sample value: Password
+# sample value: postgres:	Password
+# sample value: mysql:		Password
 hibernate.connection.password = 
 
-# sample value: true
+# sample value: postgres:	true
+# sample value: mysql:		true
 hibernate.globally_quoted_identifiers = 
 
 ###########################################
@@ -133,25 +158,32 @@ logger.framework.framework.level =
 ##################################
 # configuration of persistence.xml
 
-# sample value: frameworkConnector
+# sample value: postgresql:	frameworkConnector
+# sample value: mysql:		frameworkConnector
 test.default.persistence.unit.name = 
 
-# sample value: org.postgresql.Driver
+# sample value: postgres:	org.postgresql.Driver
+# sample value: mysql:		com.mysql.jdbc.Driver
 test.hibernate.connection.driver_class = 
 
-# sample value: org.hibernate.dialect.PostgreSQLDialect
+# sample value: postgres:	org.hibernate.dialect.PostgreSQLDialect
+# sample value: mysql:		org.hibernate.dialect.MySQLDialect
 test.hibernate.dialect = 
 
-# sample value: jdbc:postgresql://localhost:5432/framework
+# sample value: postgres:	jdbc:postgresql://localhost:5432/framework
+# sample value: mysql:		jdbc:mysql://localhost:3306/framework
 test.hibernate.connection.url = 
 
-# sample value: UserName
+# sample value: postgres:	UserName
+# sample value: mysql:		UserName
 test.hibernate.connection.username = 
 
-# sample value: Password
+# sample value: postgres:	Password
+# sample value: mysql:		Password
 test.hibernate.connection.password = 
 
-# sample value: true
+# sample value: postgres:	true
+# sample value: mysql:		true
 test.hibernate.globally_quoted_identifiers = 
 
 ###########################################

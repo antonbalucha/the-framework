@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -23,13 +23,13 @@
 			<id>devel</id>
 
 			<activation>
-            	<activeByDefault>true</activeByDefault>
-        	</activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 
 			<build>
 				<!-- This part of Maven configuration provides loading of values from buildconfiguration.development.properties and replacing them in other configuration files of the framework -->
 				<testResources>
-            		<testResource>
+					<testResource>
 						<directory>src/test/resources</directory>
 						<filtering>true</filtering>
 					</testResource>
@@ -39,7 +39,7 @@
 				</filters>
 			</build>
 		</profile>
-		
+
 		<!-- Profile for production purposes -->
 		<profile>
 			<id>prod</id>
@@ -47,7 +47,7 @@
 			<build>
 				<!-- This part of Maven configuration provides loading of values from buildconfiguration.production.properties and replacing them in other configuration files of the framework -->
 				<testResources>
-            		<testResource>
+					<testResource>
 						<directory>src/test/resources</directory>
 						<filtering>true</filtering>
 					</testResource>
@@ -99,13 +99,20 @@
 			<version>5.2.1.Final</version>
 		</dependency>
 
-		<!-- As a database is used PostgreSQL 9.3 -->
+		<!-- Support for PostgreSQL 9.3 -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.3-1104-jdbc41</version>
 		</dependency>
-		
+
+		<!-- Support for MySQL 6.0 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+
 		<!-- Framework for JUnit tests -->
 		<dependency>
 			<groupId>junit</groupId>
