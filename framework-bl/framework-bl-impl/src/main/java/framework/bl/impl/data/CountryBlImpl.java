@@ -30,8 +30,8 @@ public class CountryBlImpl implements CountryBlApi {
 	 * @return
 	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 200 and {@linkplain framework.web.wso.response.CountryResponseWso country} - information about country <br>
 	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 204 and empty content - if no country was found <br>
-	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 400 and flag {@linkplain framework.utils.translations.UIErrorKey#ALPHA2_CODE_IS_EMPTY ALPHA2_IS_EMPTY} - when entered alpha2 code is empty <br>
-	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 400 and flag {@linkplain framework.utils.translations.UIErrorKey#ALPHA2_CODE_LENGTH_IS_NOT_NVALID ALPHA2_LENGTH_IS_NOT_NVALID} - when length of alpha2 code is not equal to 2 characters <br> 
+	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 400 and flag {@linkplain framework.utils.translations.UIErrorKey#ALPHA2_CODE_IS_EMPTY ALPHA2_CODE_IS_EMPTY} - when entered alpha2 code is empty <br>
+	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 400 and flag {@linkplain framework.utils.translations.UIErrorKey#ALPHA2_CODE_LENGTH_IS_NOT_VALID ALPHA2_CODE_LENGTH_IS_NOT_VALID} - when length of alpha2 code is not equal to 2 characters <br> 
 	 * {@linkplain javax.ws.rs.core.Response Response} with HTTP status 500 and flag {@linkplain framework.utils.translations.UIErrorKey#INTERNAL_SERVER_ERROR INTERNAL_SERVER_ERROR} - if an internal server occurs <br>
 	 * @see framework.web.wso.response.CountryResponseWso
 	 * @see framework.utils.translations.UIErrorKey
@@ -43,7 +43,7 @@ public class CountryBlImpl implements CountryBlApi {
 		if (StringUtils.isBlank(alpha2)) {
 			return ResponseUtil.response(400, UIErrorKey.ALPHA2_CODE_IS_EMPTY);
 		} else if (alpha2.length() != 2) {
-			return ResponseUtil.response(400, UIErrorKey.ALPHA2_CODE_LENGTH_IS_NOT_NVALID);
+			return ResponseUtil.response(400, UIErrorKey.ALPHA2_CODE_LENGTH_IS_NOT_VALID);
 		} else {
 			
 			try {

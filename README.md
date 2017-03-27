@@ -38,7 +38,7 @@ So, what is The Framework now? Simple said, it is a project/directory structure 
 
 # Procedure how to run The Framework
 
-In following paragraphs you will find step by step procedure how to download, set up and run The Framework. 
+In following paragraphs you will find step by step procedure how to download, set up and run The Framework.
 
 ## Prerequisities
 
@@ -55,8 +55,8 @@ Run ```git clone git@github.com:antonbalucha/the-framework.git``` command from y
 ## Initialization of database and database tables
 
 Definitions of database tables are located in:
-* [the-framework/framework/sql/postgresql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/postgresql) 
-* [the-framework/framework/sql/mysql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/mysql). 
+* [the-framework/framework/sql/postgresql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/postgresql)
+* [the-framework/framework/sql/mysql](https://github.com/antonbalucha/the-framework/tree/master/framework/sql/mysql)
 
 You may choose which database you want to use. You have to run SQL scripts according their ordering.
 
